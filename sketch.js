@@ -16,7 +16,7 @@ function setup() {
   strokeWeight(4);
   background(0);
   
-  fSize = 200;
+  fSize = width/10;
   textFont(font);
   textSize(fSize);
 
