@@ -49,20 +49,22 @@ function showMessage(){
         setTimeout(showMessage, 2000 + random(2000));
         return;
     }
-    let msg, msgW, msgH;
+    let msg, msgW, msgH, yVel;
     msg = "HAPPY";
     msgW = width/5;
-    msgH = 18;
+    msgH = height/1.2;
+    yVel = sqrt(2*gravity.y*msgH);
     for(let i = 0; i<msg.length; i++){
         let targetx = ((i+1/2)*msgW/msg.length - msgW/2)/20;
-        fireworks.push(new Firework(targetx, -msgH, msg[i]));
+        fireworks.push(new Firework(targetx, -yVel, msg[i]));
     }
     msg = "BIRTHDAY!";
     msgW = width/3.5;
-    msgH = 14;
+    msgH = height/2;
+    yVel = sqrt(2*gravity.y*msgH);
     for(let i = 0; i<msg.length; i++){
         let targetx = ((i+1/2)*msgW/msg.length - msgW/2)/20;
-        fireworks.push(new Firework(targetx, -msgH, msg[i]));
+        fireworks.push(new Firework(targetx, -yVel, msg[i]));
     }
 
     setTimeout(showMessage, 4000 + random(2000));
